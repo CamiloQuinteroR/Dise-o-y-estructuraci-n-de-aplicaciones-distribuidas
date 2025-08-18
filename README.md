@@ -12,86 +12,135 @@ Para ejecutar nuestro proyecto primero debemos clonar este repositorio, para est
 En nuestra consola, compiamos y ejecutamos la siguiente linea:
 
 ```
-Give examples
+git clone https://github.com/CamiloQuinteroR/Dise-o-y-estructuraci-n-de-aplicaciones-distribuidas.git
 ```
 
+<img width="1170" height="166" alt="image" src="https://github.com/user-attachments/assets/c29b23f5-7738-4753-8551-11722f1823c4" />
 
-### Prerequisites
+Al ejecutar este comando, ya tendremos el proyecto de forma local. 
 
-What things you need to install the software and how to install them
 
-```
-Give examples
-```
 
-### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+### Prerequistos
 
-```
-Give the example
-```
+Para ejecutar este proyecto deberas tener instalado en tu maquina cualquier IDE, como los son NetBeasn o Visual Studio Code.
+En este caso, abriremos y ejecutaremos el poryecto usando NetBeans. 
 
-And repeat
+Sin importar el IDE deberás tener instalado JDK 23 y Maven. 
+
+Si deseas instalar Maven basta con dirigirnos a la pagina de Maven y descargar el instalador que requiera nuestra maquina:
 
 ```
-until finished
+[Give examples](https://maven.apache.org/download.cgi)
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Al descargar el archivo, seguiremos los pasos de la instalación, es realemente sencillo. 
 
-## Running the tests
 
-Explain how to run the automated tests for this system
+### Instalando
 
-### Break down into end to end tests
+Depsues de tener nuestro poryecto clonado de forma local, abrimos nuestro proyecto en el IDE de preferencia, en este caso los abriremos en NetBeans:
 
-Explain what these tests test and why
+<img width="251" height="107" alt="image" src="https://github.com/user-attachments/assets/83c2326f-c74d-4fd5-aa1b-e231b0218896" />
+
+Nos dirigimos a la clase principal, en este caso es HttpServer.java:
+
+<img width="284" height="214" alt="image" src="https://github.com/user-attachments/assets/3aa96a41-3161-4c5e-ad1f-dabe86fbb708" />
+
+
+A continuación ejecutamos la clase HttpServer.java:
+
+(Si estamos en NetBeans, basta con dar clic derecho sobre la clase y dar clic sobre la opción "Run File")
+
+<img width="293" height="304" alt="image" src="https://github.com/user-attachments/assets/4ef0931b-799e-46c9-902a-cad335653b28" />
+
+
+Al ejecutar nuestro poryecto veremos en consola en mensaje incial de nuestro servidor:
+
+<img width="590" height="267" alt="image" src="https://github.com/user-attachments/assets/0f75c8fc-7f5a-42f5-bf59-f3982b52b14c" />
+
+
+Si deseamos, tambien podemos ejecutar nuestro proyecto desde consola, para esto ejecutaremos el siguiente comando:
+
 
 ```
-Give an example
+mvn compile
 ```
 
-### And coding style tests
+<img width="1253" height="392" alt="image" src="https://github.com/user-attachments/assets/6fc2d9eb-bcb1-4689-b66d-dc1f2973f1b3" />
 
-Explain what these tests test and why
+
+Hay que tener en cuenta que debemos ejecutar este comando en el directorio donde se encuentra ubicado nuestro archivo pom.xml. 
+
+Posteriormente ejecutaremos el siguiente comando:
 
 ```
-Give an example
+mvn compile
 ```
 
-## Deployment
+<img width="957" height="194" alt="image" src="https://github.com/user-attachments/assets/f8afbba4-5fe5-4c82-a0c8-29397242e606" />
 
-Add additional notes about how to deploy this on a live system
+Veremos en consola el mensaje inicial de nuestro servidor. 
 
-## Built With
+## Ejecución de las pruebas
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+Teniendo nuestro servidor corriendo, ingresaremos al broswer y escribirimos la siguiente URL:
 
-## Contributing
+```
+http://localhost:35000
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+```
 
-## Versioning
+Allí veremos la siguiente aplicación:
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+<img width="1132" height="521" alt="image" src="https://github.com/user-attachments/assets/f933650e-cf6a-4f15-91fb-13966ded4fa4" />
 
-## Authors
+Podremos ver que hay un formulario en que podemos poner nombres de tareas pendientes, que se agregaran a una lista cuando damos clic en el boton "Agregar"
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+<img width="310" height="315" alt="image" src="https://github.com/user-attachments/assets/72fe909a-98db-4c7b-a9a2-c2c145e65697" />
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+Podemos ver que en la imagen anterior, se añadieron tareas como "Matematicas", "cvds" y "arep"
 
-## License
+Ahora para probar la funcionalidad de que el servidor soporta múlltiples solicitudes seguidas no concurrente, veremos que en consola tendremos los siguientes resultados:
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+<img width="185" height="135" alt="image" src="https://github.com/user-attachments/assets/4b72632b-f5d2-41a9-ade1-fd5b55f3ffd9" />
 
-## Acknowledgments
+Vemos como el servidor responde cada una de las solicitudes.
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Así mismo, podemos usar la siguiente URL para probar el servicio REST:
+
+```
+http://localhost:35000/app/task?name=cvds
+```
+
+veremos que se nos genera un archivo JSON con la siguiente respuesta:
+
+
+<img width="421" height="123" alt="image" src="https://github.com/user-attachments/assets/01b3b916-77b1-4819-aeb7-7b49b33a57ed" />
+
+Como se evidencia, la URI de solicitud es:
+
+```
+/app/task?name=cvds
+
+```
+
+y la respuesta del servidor es:
+
+
+```
+"Tarea cvds"
+```
+
+## Desarrollado con
+
+* https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html - Java 23
+* https://maven.apache.org/ - Maven
+
+
+## Autores
+
+* **Camilo Andrés Quintero Rodriguez**
+
