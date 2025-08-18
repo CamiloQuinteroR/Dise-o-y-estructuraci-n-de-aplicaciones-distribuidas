@@ -5,9 +5,16 @@ En este taller se explorará la arquitectura de las aplicaciones distribuidas. C
 El reto se consistió en diseñar e implementar un servidor web que soporta múlltiples solicitudes seguidas no concurrentes. El servidor es capaz de leer los archivos del disco local y retornar todos los archivos solicitados, incluyendo páginas html, archivos java script, css e imágenes. 
 Además, se contruyó una pequeña aplicación web con  javascript, css, e imágenes para probar el servidor. Así mismo se incluyó en la aplicación la comunicación asíncrona con unos servicios REST en el backend.
 
-## Getting Started
+## Primeros pasos
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Para ejecutar nuestro proyecto primero debemos clonar este repositorio, para esto nos debemos dirigir a la consola de nuestro equipo y conlar el proyecto siguiendo los pasos a continuación:
+
+En nuestra consola, compiamos y ejecutamos la siguiente linea:
+
+```
+Give examples
+```
+
 
 ### Prerequisites
 
