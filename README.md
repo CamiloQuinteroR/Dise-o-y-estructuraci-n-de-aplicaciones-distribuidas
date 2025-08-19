@@ -2,12 +2,12 @@
 
 En este taller se explorará la arquitectura de las aplicaciones distribuidas. Concretamente, exploraremos la arquitectura de  los servidores web y el protocolo http sobre el que están soportados. 
 
-El reto se consistió en diseñar e implementar un servidor web que soporta múlltiples solicitudes seguidas no concurrentes. El servidor es capaz de leer los archivos del disco local y retornar todos los archivos solicitados, incluyendo páginas html, archivos java script, css e imágenes. 
+El reto consistió en diseñar e implementar un servidor web que soporta múlltiples solicitudes seguidas no concurrentes. El servidor es capaz de leer los archivos del disco local y retornar todos los archivos solicitados, incluyendo páginas html, archivos java script, css e imágenes. 
 Además, se contruyó una pequeña aplicación web con  javascript, css, e imágenes para probar el servidor. Así mismo se incluyó en la aplicación la comunicación asíncrona con unos servicios REST en el backend.
 
 ## Primeros pasos
 
-Para ejecutar nuestro proyecto primero debemos clonar este repositorio, para esto nos debemos dirigir a la consola de nuestro equipo y conlar el proyecto siguiendo los pasos a continuación:
+Para ejecutar nuestro proyecto primero debemos clonar este repositorio, para esto nos debemos dirigir a la consola de nuestro equipo y clonar el proyecto siguiendo los pasos a continuación:
 
 En nuestra consola, compiamos y ejecutamos la siguiente linea:
 
@@ -25,15 +25,15 @@ Al ejecutar este comando, ya tendremos el proyecto de forma local.
 
 ### Prerequistos
 
-Para ejecutar este proyecto deberas tener instalado en tu maquina cualquier IDE, como los son NetBeasn o Visual Studio Code.
+Para ejecutar este proyecto deberás tener instalado en tu maquina cualquier IDE, como los son NetBeasn o Visual Studio Code.
 En este caso, abriremos y ejecutaremos el poryecto usando NetBeans. 
 
 Sin importar el IDE deberás tener instalado JDK 23 y Maven. 
 
-Si deseas instalar Maven basta con dirigirnos a la pagina de Maven y descargar el instalador que requiera nuestra maquina:
+Si deseas instalar Maven basta con dirigirnos a la página de Maven y descargar el instalador que requiera nuestra máquina:
 
 ```
-[Give examples](https://maven.apache.org/download.cgi)
+https://maven.apache.org/download.cgi
 ```
 
 Al descargar el archivo, seguiremos los pasos de la instalación, es realemente sencillo. 
@@ -57,7 +57,7 @@ A continuación ejecutamos la clase HttpServer.java:
 <img width="293" height="304" alt="image" src="https://github.com/user-attachments/assets/4ef0931b-799e-46c9-902a-cad335653b28" />
 
 
-Al ejecutar nuestro poryecto veremos en consola en mensaje incial de nuestro servidor:
+Al ejecutar nuestro proyecto veremos en consola el mensaje incial de nuestro servidor:
 
 <img width="590" height="267" alt="image" src="https://github.com/user-attachments/assets/0f75c8fc-7f5a-42f5-bf59-f3982b52b14c" />
 
@@ -86,7 +86,7 @@ Veremos en consola el mensaje inicial de nuestro servidor.
 
 ## Ejecución de las pruebas
 
-Teniendo nuestro servidor corriendo, ingresaremos al broswer y escribirimos la siguiente URL:
+Teniendo nuestro servidor corriendo, ingresaremos al broswer y escribiremos la siguiente URL:
 
 ```
 http://localhost:35000
@@ -151,7 +151,7 @@ Además de estos componentes tenemos el servicio REST /app/task encargado de exp
 En nuestra arquitectura, el flujo de comunicación entre los componentes es sencillo, pues el usuario manipula la pagina web, en este caso llenando el formulario, el navegador procede a enviar una solicitud al servidor y el servidor, decide que hacer, si se trata de una solicitud de servicio web, únicamente, se encarga de enviar los archivos necesarios que se encuentran en el disco, de lo contrario, si es un servicio REST, procesa la solicitud y le envía al navegador un JSON que es renderizado posteriormente por el mismo navegador. 
 
 
-## Autores
+## Autor
 
 * **Camilo Andrés Quintero Rodriguez**
 
