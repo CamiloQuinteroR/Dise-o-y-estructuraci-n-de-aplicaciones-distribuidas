@@ -139,6 +139,17 @@ y la respuesta del servidor es:
 * https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html - Java 23
 * https://maven.apache.org/ - Maven
 
+## Arquitectura
+
+Para la implementación de esta solución, usamos una arquitectura cliente servidor, en este caso, el cliente lo podemos ver como la interfaz que interactúa con el usuario, mientas que el servidor es quien maneja las solicitudes y peticiones, encargándose de entregar los recursos necesarios para responder las solicitudes y los servicios REST. 
+
+La arquitectura está compuesta por algunos componentes, usuario y pagina web. El usuario es quien interactúa con la aplicación y el navegador es el encargado de convertir y tratar los archivos html, css y js para renderizar su contenido y además, envía peticiones y recibe las respuestas del servidor HTTP.
+
+Podemos decir que, los componentes clientes de nuestra arquitectura son los descritos anteriormente, es decir, el usuario y la pagina web, y así mismo, tenemos otros componentes como el servidor, quien recibe las solicitudes del navegador, entrega recursos como html, css, js e imágenes. Además del servidor tenemos los archivos estáticos descritos anteriormente que el servidor lee del disco y son enviados al navegador. 
+Además de estos componentes tenemos el servicio REST /app/task encargado de exponer un servicio que recibe una solicitud y genera un JSON.  
+
+En nuestra arquitectura, el flujo de comunicación entre los componentes es sencillo, pues el usuario manipula la pagina web, en este caso llenando el formulario, el navegador procede a enviar una solicitud al servidor y el servidor, decide que hacer, si se trata de una solicitud de servicio web, únicamente, se encarga de enviar los archivos necesarios que se encuentran en el disco, de lo contrario, si es un servicio REST, procesa la solicitud y le envía al navegador un JSON que es renderizado posteriormente por el mismo navegador. 
+
 
 ## Autores
 
